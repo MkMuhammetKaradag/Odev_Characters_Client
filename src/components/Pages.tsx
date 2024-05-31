@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "./Card";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useAppDispatch, useAppSelector } from "../context/hooks";
 import { useCharacter } from "../hooks/graphql/characters/getCharacter";
-import { Pagination } from "flowbite-react";
+
 import { setInfo } from "../context/RickAndMorty/RickAndMortySlice";
 const Pages = () => {
-  const result = useAppSelector((state) => state.app.characters);
+  
   const filterChange = useAppSelector((state) => state.app.filter);
   const page = useAppSelector((state) => state.app.page);
   const dispatch = useAppDispatch();
-  const { characters, error, info, loading } = useCharacter({
+  const { characters, info } = useCharacter({
     gender: filterChange.gender,
     name: filterChange.name,
     species: filterChange.species,

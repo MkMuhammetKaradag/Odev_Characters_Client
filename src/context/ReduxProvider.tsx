@@ -5,14 +5,14 @@ import appReducer from "./RickAndMorty/RickAndMortySlice";
 import { useQuery } from "@apollo/client";
 import { GetCharctersQuery, GetCharctersQueryVariables } from "../gql/graphql";
 import { GET_CHARACTERS } from "../graphql/queries/getCaracters";
-import { useCharacter } from "../hooks/graphql/characters/getCharacter";
+
 
 interface ReduxProvider {
   children: React.ReactElement<any>;
 }
 const ReduxProvider = ({ children }: ReduxProvider) => {
   //AuthSlicer State Value
-  const { loading, error, data } = useQuery<
+  const {  data } = useQuery<
     GetCharctersQuery,
     GetCharctersQueryVariables
   >(GET_CHARACTERS);

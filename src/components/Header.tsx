@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useAppDispatch } from "../context/hooks";
 import { setFilter } from "../context/RickAndMorty/RickAndMortySlice";
 

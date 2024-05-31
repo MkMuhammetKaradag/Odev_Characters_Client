@@ -1,12 +1,6 @@
-import { useQuery } from "@apollo/client";
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {
-  GetCharctersQuery,
-  GetCharctersQueryVariables,
-} from "../../gql/graphql";
-import { GET_CHARACTERS } from "../../graphql/queries/getCaracters";
-import { RootState } from "../store";
-import { useCharacter } from "../../hooks/graphql/characters/getCharacter";
+
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 
 export interface RickAndMortyStateType {
   page: number;

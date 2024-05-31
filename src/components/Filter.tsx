@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../context/hooks";
+
+import { useAppDispatch } from "../context/hooks";
 import {
   delFilter,
   setFilter,
   setPage,
 } from "../context/RickAndMorty/RickAndMortySlice";
-import { useCharacter } from "../hooks/graphql/characters/getCharacter";
 import FilterCheckBox from "./FilterCheckBox";
 const filterValus = [
   {
@@ -36,7 +35,7 @@ const filterValus = [
 
 const Filter = () => {
   const dispatch = useAppDispatch();
-  const filter = useAppSelector((state) => state.app.filter);
+  
   const filterChange = (key: string, val: string, checked: boolean) => {
     if (checked) {
       dispatch(setFilter({ key, val }));
